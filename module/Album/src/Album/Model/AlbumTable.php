@@ -8,12 +8,13 @@ class AlbumTable {
 	
 	protected $tableGateway;
 
-	public function __constructor(TableGateway $tableGateway) {
+	public function __construct(TableGateway $tableGateway) {
 		$this->tableGateway = $tableGateway;
 	}
 
 	public function fetchAll() {
-		return $this->tableGateway->select();
+		$resultSet = $this->tableGateway->select();
+		return $resultSet;
 	}
 
 	public function getAlbum($id) {
